@@ -319,5 +319,17 @@
         <item>gprs:4092,8760,11680,4096,8760,11680</item>
         <item>evdo_b:4094,87380,262144,4096,16384,262144</item>
     </string-array>
+<<<<<<< HEAD
+=======
+    
+   <!-- The list absolute paths of jar/apk files containing the device specific handlers,
+     delimited by File.pathSeparator, which defaults to ":" on Android -->
+   <string name="config_deviceKeyHandlerLib" translatable="false">/system/app/DeviceHandler.apk</string>
+
+   <!-- Full qualified name of the class that implements
+     com.android.internal.os.DeviceKeyHandler interface. -->
+   <string name="config_deviceKeyHandlerClass" translatable="false">com.candy.device.KeyHandler</string>
+
+>>>>>>> f65a9f0... add screen off gestures
 
 </resources>
