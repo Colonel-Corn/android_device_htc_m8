@@ -1,0 +1,3 @@
+add_lunch_combo nameless_m8-user
+add_lunch_combo nameless_m8-userdebug
+add_lunch_combo nameless_m8-eng
