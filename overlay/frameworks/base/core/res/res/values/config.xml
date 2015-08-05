@@ -332,4 +332,8 @@
 
 >>>>>>> f65a9f0... add screen off gestures
 
+    <!-- Default values for display color temperature -->
+    <integer name="config_dayColorTemperature">7000</integer>
+    <integer name="config_nightColorTemperature">4000</integer>
+
 </resources>
