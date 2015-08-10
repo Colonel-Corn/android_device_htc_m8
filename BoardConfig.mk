@@ -53,7 +53,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -104,13 +104,13 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_SPECIFIC_HEADER_PATH := device/htc/m8/include
 
 # Lights
-TARGET_PROVIDES_LIBLIGHT := true
+# TARGET_PROVIDES_LIBLIGHT := true
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8974
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+# TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
@@ -157,7 +157,10 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+# TARGET_PREBUILT_KERNEL := device/htc/m8/recovery/kernel
+# TARGET_RECOVERY_INITRC := device/htc/m8/recovery/init.rc
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -198,3 +201,30 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
 
 # Hardware
 BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+
+# TWRP Build Flags
+RECOVERY_VARIANT := multirom
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_INCLUDE_DUMLOCK := true
+TW_INCLUDE_L_CRYPTO := true
+TW_NO_EXFAT_FUSE := true
+TW_NO_SCREEN_BLANK := true
+TW_THEME := portrait_hdpi
+
+
+# Shit that susan says I should use, IDK?
+# Display
+# TARGET_QCOM_DISPLAY_VARIANT := caf-bfam
+# USE_OPENGL_RENDERER := true
+# TARGET_USES_ION := true
+# TARGET_USES_C2D_COMPOSITION := true
+# OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+# Time Daemon
+# BOARD_USES_QC_TIME_SERVICES := true
+# Audio/media
+# TARGET_QCOM_AUDIO_VARIANT := caf-bfam
+# TARGET_QCOM_MEDIA_VARIANT := caf-bfam
+# TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+
